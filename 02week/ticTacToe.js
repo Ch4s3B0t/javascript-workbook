@@ -7,9 +7,9 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 let board = [
-  [' ', ' ', ' '],
-  [' ', ' ', ' '],
-  [' ', ' ', ' ']
+  array1: [' ', ' ', ' '],
+  array2: [' ', ' ', ' '],
+  array3: [' ', ' ', ' ']
 ];
 
 let playerTurn = 'X';
@@ -25,14 +25,27 @@ function printBoard() {
 
 function horizontalWin() {
   // Your code here
+  if (array1===[x,x,x]||[o,o,o]){
+    return "Win!";
+  }else if (array2===[x,x,x]||[o,o,o]) {
+    return "Win!"
+  }else if (array3===[x,x,x]||[o,o,o]) {
+    return "Win!"
+  }
 }
 
 function verticalWin() {
   // Your code here
+  if (array1[0]===x||o && array2[0]===x||o && array3[0]===x||0){
+    return "Win!"
+  }
 }
 
 function diagonalWin() {
   // Your code here
+  if (array1[0]===x||o && array2[1]===x||o && array3[2]===x||o){
+    return "Win!"
+  }
 }
 
 function checkForWin() {
