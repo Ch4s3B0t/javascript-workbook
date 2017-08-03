@@ -30,11 +30,13 @@ function getRandomInt(min, max) {
 
 function generateHint() {
   // your code here
+
 }
 
 function mastermind(guess) {
-  solution = 'abcd'; // Comment this out to generate a random solution
+  //solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
+  
 }
 
 
