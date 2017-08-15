@@ -9,10 +9,19 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
-
-  // Your code here
-
-}
+  let inputArray = word.split('');
+  let vowelArray = ['a','e','i','o','u'];
+  for(let i =0; i<inputArray.length;i++){
+    const letter = inputArray[i];
+    if(vowelArray.indexOf(letter)!== -1){
+      const cutPiece = inputArray.slice(0,i)
+      const remainingArr = inputArray.slice(i)
+      const theEnd = remainingArr.concat(cutPiece);
+      console.log(theEnd.join('') + 'ay');
+          break;
+    }
+  }
+  }
 
 
 function getPrompt() {
