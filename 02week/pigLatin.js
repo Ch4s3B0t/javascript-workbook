@@ -9,20 +9,23 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
-let inputArray = word.split('');
-let vowelArray = ['a','e','i','o','u'];
-for(let i =0; i<inputArray.length;i++){
-  //console.log(i);
-  const letter = inputArray[i];
-  if(vowelArray.indexOf(letter)!== -1){
-    const cutPiece = inputArray.slice(0,i)
-    console.log(cutPiece, inputArray);
-        //return finalStr
-        break;
-  }
-}
+  let inputArray = word.split('');
+  let vowelArray = ['a','e','i','o','u'];
+  for(let i =0; i<inputArray.length;i++){
+    //console.log(i);
+    const letter = inputArray[i];
+    if(vowelArray.indexOf(letter)!== -1){
+      const cutPiece = inputArray.slice(0,i)
+      const remainingArr = inputArray.slice(i)
+      const theEnd = remainingArr.concat(cutPiece);
+      console.log(theEnd.join('') + 'ay');
 
-}
+      //console.log(cutPiece, inputArray);
+          //return finalStr
+          break;
+    }
+  }
+  }
 
 function getPrompt() {
   rl.question('word ', (answer) => {
