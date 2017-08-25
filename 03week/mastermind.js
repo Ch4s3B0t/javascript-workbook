@@ -31,15 +31,18 @@ function getRandomInt(min, max) {
 
 function generateHint(guess) {
   // your code here
+  //convert strings to arrays and store
   const guessArr = guess.split('');
   const solutionArr = solution.split('');
   //console.log(guessArr,solutionArr);
   //console.log(guessArr)
+  //create arrays to store correct letters and their place
   const correctLetter = []
   const correctPlace =[]
   for(let i =0 ; i < guessArr.length; i++){
     const letter = guessArr[i];
     //console.log(letter);
+    //for each item in the array, compare to other array then push to correct arrays
     if (solutionArr.indexOf(letter) !== -1){
       if(guessArr.indexOf(letter) === solutionArr.indexOf(letter)){
         // right letter and right location
@@ -50,9 +53,9 @@ function generateHint(guess) {
       }
       
     }
-    //console.log(solution);
-    //console.log(correctLetter);
-    console.log(`You got ${correctLetter.length} correct letters`);
+    console.log(solution);
+    console.log(correctLetter, correctPlace);
+    console.log(`You got ${correctLetter.length} correct letters and ${correctPlace.length} in the right place`);
     return `You got ${correctLetter.length} correct`
   }
 
@@ -62,11 +65,12 @@ function mastermind(guess) {
   //solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
   if (guess === solution){
+    console.log('You guessed it!');
     return 'You guessed it!';
   }else {
     return generateHint(guess);
   }
-  //console.log(guess ,solution);
+  console.log(guess ,solution);
 }
 
 
