@@ -19,7 +19,7 @@ class TicTacToe extends React.Component {
   };
   render() {
       // if statement for win
-
+      
     return (
       <div>
         <div className="row">
