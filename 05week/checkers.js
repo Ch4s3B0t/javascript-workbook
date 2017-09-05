@@ -14,6 +14,15 @@ function Checker() {
 
 function Board() {
   this.grid = [];
+  this.checkers = [];
+  this.populateBoard = function (){
+    for ( let i = 0; i < 12; i++){
+      this.checkers.push('x');
+    }
+    for ( let j = 0; j < 12; j++){
+      this.checkers.push('o');
+    }
+  }
   // creates an 8x8 array, filled with null values
   this.createGrid = function() {
     // loop to create the 8 rows
@@ -60,6 +69,8 @@ function Game() {
 
   this.start = function() {
     this.board.createGrid();
+    this.board.populateBoard();
+    //console.log(this.board.checkers);
     // Your code here
   };
 }
